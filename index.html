@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira questão</title>
+    <link rel="icon" href="img/icon.png" type="image/png"/>
+</head>
+
+<body>
+
+    <h2>1)</h2>
+    <p>Minúsculas > maiúsculas</p>
+    <br>
+    <p>
+       Digite seu nome:
+        <input type="text" name="palavra" id="txtpalavra" >
+    </p>
+
+    <script>
+        const palavra = document.getElementById("txtpalavra")
+
+        palavra.addEventListener('keyup', maiusculo)
+
+        function maiusculo(){
+            palavra.value = palavra.value.toUpperCase();
+        }
+    </script>
+
+    <h2>3)</h2>
+    <p>Soma do dobro do valor digitado</p>
+    <input type="number" name="numero" id="numero"> + 2
+    <input type="button" name="clicar" value="Dobrar" onclick="somar()">
+    
+    <div id="result"><br>Resultado</div>
+
+    <script>
+        //Função que irá somar os números
+        function somar() {
+            let num = window.document.getElementById('numero')
+            let result = window.document.getElementById('result')
+
+            let n0 = Number(num.value)
+            let n1 = 2
+            let soma = n0 + n1
+            result.innerHTML = soma
+        }
+    </script>
+
+
+
+    <h2>4)</h2>
+    <p>Soma, multiplicação, divisão e subtração</p>
+   
+    <input type="number" name="numero1" id="numero1">
+    
+    <br>
+    <br>
+    <input type="number" name="numero1" id="numero2">
+    <div id="resp"><br>Resultado</div>
+  
+    <input type="button" name="clicar" value="+" onclick="soma()">
+    <input type="button" name="clicar" value="-" onclick="subtrair()">
+    <input type="button" name="clicar" value="*" onclick="multiplicar()">
+    <input type="button" name="clicar" value="/" onclick="dividir()">
+    
+    <script>
+        function soma(){
+            let num1 = window.document.getElementById('numero1')
+            let num2 = window.document.getElementById('numero2')
+
+            let n = Number(num1.value)
+            let n2 = Number(num2.value)
+            let somar = n + n2 
+            resp.innerHTML = somar
+        }
+
+        function subtrair(){
+            let num1 = window.document.getElementById('numero1')
+            let num2 = window.document.getElementById('numero2')
+   
+            let n = Number(num1.value)
+            let n2 = Number(num2.value)
+            let subtrair = n - n2 
+            resp.innerHTML = subtrair
+           }
+
+           function multiplicar(){
+            let num1 = window.document.getElementById('numero1')
+            let num2 = window.document.getElementById('numero2')
+   
+            let n = Number(num1.value)
+            let n2 = Number(num2.value)
+            let multiplicar = n * n2 
+            resp.innerHTML = multiplicar
+           }
+
+           function dividir(){
+            let num1 = window.document.getElementById('numero1')
+            let num2 = window.document.getElementById('numero2')
+   
+            let n = Number(num1.value)
+            let n2 = Number(num2.value)
+            let dividir = n / n2 
+            resp.innerHTML = dividir
+           }
+    </script>
+
+    <h2>5)</h2>
+    <P>Itens da compra</P>
+
+    <p>
+        <input type="text" name="compras" id="txtlist" onfocus="this.value=''" >
+        <button id="add">Adicionar</button>
+    </p>
+
+    <script>
+
+        //A cada clique um objeto será salvo
+      var lista = document.querySelector('#add')
+
+      lista.addEventListener('click', listaCompras)
+
+      function listaCompras (){
+
+        //Objetos da lista serão atribuidas a variavel
+        const objetos = document.querySelector('#txtlist')
+
+        const objetos1 = document.createElement('p')
+        objetos1.innerHTML = objetos.value
+        document.body.appendChild(objetos1)
+      }
+        
+    </script>
+
+    <h2>6)</h2>
+    <p>Exibir um Pop up ao clicar</p>
+    <p>
+        <input type="text" name="tec" id="tecno"  onfocus="this.value=''">
+        <button id="tec">Exibir</button>
+    </p>
+   
+    
+    <script>
+
+        //A cada clique um objeto será salvo
+      var tecnol = document.querySelector('#tec')
+
+      tecnol.addEventListener('click', tecnologias)
+
+      function tecnologias (){
+
+        const tecnologi = document.querySelector('#tecno')
+
+        const listar = document.createElement('p')
+        listar.innerHTML = tecnologi.value
+        document.body.appendChild(listar)
+        window.alert(tecnologi);
+      }
+        
+    </script>
+
+
+
+    
+  
+</body>
+</html>
